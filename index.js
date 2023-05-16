@@ -2,19 +2,19 @@ import select from '@inquirer/select';
 import input from '@inquirer/input';
 
 const verbs = {
-	all: {
+  all: {
     description: 'All verbs',
     list: []
   },
-	allReg: {
+  allReg: {
     description: 'All regular verbs',
     list: []
   },
-	allIrreg: {
+  allIrreg: {
     description: 'All irregular verbs',
     list: []
   },
-	allAR: {
+  allAR: {
     description: 'Verbs ending in -AR (all)',
     list: []
   },
@@ -26,7 +26,7 @@ const verbs = {
     description: 'Verbs ending in -AR (irregular)',
     list: [ 'almorzar', 'cerrar', 'empezar', 'encontrar', 'jugar', 'pensar', 'recordar' ]
   },
-	allER: {
+  allER: {
     description: 'Verbs ending in -ER (all)',
     list: []
   },
@@ -38,7 +38,7 @@ const verbs = {
     description: 'Verbs ending in -ER (irregular)',
     list: [ 'devolver', 'entender', 'hacer', 'perder', 'poder', 'poner', 'querer', 'saber', 'tener', 'ver', 'volver' ]
   },
-	allIR: {
+  allIR: {
     description: 'Verbs ending in -IR (all)',
     list: []
   },
@@ -50,10 +50,10 @@ const verbs = {
     description: 'Verbs ending in -IR (irregular)',
     list: [ 'dormir', 'mentir', 'oír', 'pedir', 'preferir', 'repetir', 'salir', 'seguir', 'servir', 'sonreír', 'venir' ]
   },
-	spec: {
-		description: 'Specific verb',
-		list: []
-	}
+  spec: {
+    description: 'Specific verb',
+    list: []
+  }
 };
 
 const forms = [ 'yo', 'tú', 'el / ella / usted', 'nosotros', 'vosotros', 'ellos / ellas / ustedes'];
@@ -131,21 +131,21 @@ const conjugations = {
   subir: [ 'subo', 'subes', 'sube', 'subimos', 'subís', 'suben' ],
   sufrir: [ 'sufro', 'sufres', 'sufre', 'sufrimos', 'sufrís', 'sufren' ],
   vivir: [ 'vivo', 'vives', 'vive', 'vivimos', 'vivís', 'viven' ],
-	// Irregular -IR verbs (e > ie)
-	mentir: [ 'miento', 'mientes', 'miente', 'mentimos', 'mentís', 'mienten' ],
-	preferir: [ 'prefiero', 'prefieres', 'prefiere', 'preferimos', 'preferís', 'prefieren' ],
-	venir: [ 'vengo', 'vienes', 'viene', 'venimos', 'venís', 'vienen' ],
-	// Irregular -IR verbs (e > i)
-	pedir: [ 'pido', 'pides', 'pide', 'pedimos', 'pedís', 'piden' ],
-	repetir: [ 'repito', 'repites', 'repite', 'repetimos', 'repetís', 'repiten' ],
-	seguir: [ 'sigo', 'sigues', 'sigue', 'seguimos', 'seguís', 'siguen' ],
-	servir: [ 'sirvo', 'sirves', 'sirve', 'servimos', 'servís', 'sirven' ],
-	sonreír: [ 'sonrío', 'sonríes', 'sonríe', 'sonreímos', 'sonreís', 'sonríen' ],
-	// Irregular -IR verbs (o > ue)
-	dormir: [ 'duermo', 'duermes', 'duerme', 'dormimos', 'dormís', 'duermen' ],
-	// Irregular -IR verbs (yo)
-	oír: [ 'oigo', 'oyes', 'oye', 'oímos', 'oís', 'oyen' ],
-	salir: [ 'salgo', 'sales', 'sale', 'salimos', 'salís', 'salen' ]
+  // Irregular -IR verbs (e > ie)
+  mentir: [ 'miento', 'mientes', 'miente', 'mentimos', 'mentís', 'mienten' ],
+  preferir: [ 'prefiero', 'prefieres', 'prefiere', 'preferimos', 'preferís', 'prefieren' ],
+  venir: [ 'vengo', 'vienes', 'viene', 'venimos', 'venís', 'vienen' ],
+  // Irregular -IR verbs (e > i)
+  pedir: [ 'pido', 'pides', 'pide', 'pedimos', 'pedís', 'piden' ],
+  repetir: [ 'repito', 'repites', 'repite', 'repetimos', 'repetís', 'repiten' ],
+  seguir: [ 'sigo', 'sigues', 'sigue', 'seguimos', 'seguís', 'siguen' ],
+  servir: [ 'sirvo', 'sirves', 'sirve', 'servimos', 'servís', 'sirven' ],
+  sonreír: [ 'sonrío', 'sonríes', 'sonríe', 'sonreímos', 'sonreís', 'sonríen' ],
+  // Irregular -IR verbs (o > ue)
+  dormir: [ 'duermo', 'duermes', 'duerme', 'dormimos', 'dormís', 'duermen' ],
+  // Irregular -IR verbs (yo)
+  oír: [ 'oigo', 'oyes', 'oye', 'oímos', 'oís', 'oyen' ],
+  salir: [ 'salgo', 'sales', 'sale', 'salimos', 'salís', 'salen' ]
 };
 
 const colors = {
@@ -155,12 +155,12 @@ const colors = {
   neutral: '\x1b[0m'
 }
 const setUpData = () => {
-	verbs.allReg.list = [ ...verbs.regAR.list, ...verbs.regER.list, ...verbs.regIR.list ];
-	verbs.allIrreg.list = [ ...verbs.irregAR.list, ...verbs.irregER.list, ...verbs.irregIR.list ];
-	verbs.all.list = [ ...verbs.allReg.list, ...verbs.allIrreg.list ];
+  verbs.allReg.list = [ ...verbs.regAR.list, ...verbs.regER.list, ...verbs.regIR.list ];
+  verbs.allIrreg.list = [ ...verbs.irregAR.list, ...verbs.irregER.list, ...verbs.irregIR.list ];
+  verbs.all.list = [ ...verbs.allReg.list, ...verbs.allIrreg.list ];
   verbs.allAR.list = [ ...verbs.regAR.list, ...verbs.irregAR.list ];
   verbs.allER.list = [ ...verbs.regER.list, ...verbs.irregER.list ];
-	verbs.allIR.list = [ ...verbs.regIR.list, ...verbs.irregIR.list ];
+  verbs.allIR.list = [ ...verbs.regIR.list, ...verbs.irregIR.list ];
 }
 
 const verifyData = () => {
@@ -175,18 +175,18 @@ const verifyData = () => {
 }
 
 const inputVerb = async () => {
-	const answer = await input({ message: `What verb would you like to practice?`});
-	const formattedAnswer = answer.toLowerCase().replace('a\'', 'á').replace('e\'', 'é').replace('i\'', 'í');
-	
-	if (formattedAnswer == 'menu' || formattedAnswer == 'exit') {
+  const answer = await input({ message: `What verb would you like to practice?`});
+  const formattedAnswer = answer.toLowerCase().replace('a\'', 'á').replace('e\'', 'é').replace('i\'', 'í');
+  
+  if (formattedAnswer == 'menu' || formattedAnswer == 'exit') {
     return formattedAnswer == 'menu' ? initiateGame() : process.exit();
   }
-	if (!conjugations[formattedAnswer]) {
-		console.log(`\n${colors.primary}Sorry, this verb is not available!${colors.neutral}`, '\n');
-		return inputVerb();
-	};
+  if (!conjugations[formattedAnswer]) {
+    console.log(`\n${colors.primary}Sorry, this verb is not available!${colors.neutral}`, '\n');
+    return inputVerb();
+  };
 
-	return formattedAnswer;
+  return formattedAnswer;
 }
 
 const playRound = async (activeVerbs, score = 0, attempts = 0, mistakes = []) => {
@@ -201,9 +201,9 @@ const playRound = async (activeVerbs, score = 0, attempts = 0, mistakes = []) =>
   if (formattedAnswer == 'menu' || formattedAnswer == 'exit') {
     console.log(`\nYour score was ${colors.primary}${score}/${attempts}${colors.neutral}.`);
 
-		if (activeVerbs.length > 1 && mistakes.length) {
-			console.log(`\nYou should study the following verbs: ${colors.primary}${mistakes.join(', ')}${colors.neutral}.`);
-		}
+    if (activeVerbs.length > 1 && mistakes.length) {
+      console.log(`\nYou should study the following verbs: ${colors.primary}${mistakes.join(', ')}${colors.neutral}.`);
+    }
     console.log('Well done for practicing!', '\n');
     return formattedAnswer == 'menu' ? initiateGame() : process.exit();
   }
@@ -213,9 +213,9 @@ const playRound = async (activeVerbs, score = 0, attempts = 0, mistakes = []) =>
     score++;
   } else {
     console.log(`${colors.red}WRONG${colors.neutral} - correct answer is ${colors.primary}${correctAnswer}${colors.neutral}`, '\n');
-		if (!mistakes.includes(currVerb)) {
-			mistakes.push(currVerb);
-		}
+    if (!mistakes.includes(currVerb)) {
+      mistakes.push(currVerb);
+    }
   }
 
   attempts++;
@@ -231,19 +231,19 @@ const initiateGame = async () => {
   const selection = await select({
     message: 'Select which verbs to practice',
     choices: Object.entries(verbs).map(([ key, value]) => ({ name: value.description, value: key})),
-		pageSize: 100
+    pageSize: 100
   });
 
-	let activeVerbs;
+  let activeVerbs;
 
-	if (selection === 'spec') {
-		const inputtedVerb = await inputVerb();
-		activeVerbs = [ inputtedVerb ];
-		console.log(`\nGreat, you've chosen to practice the verb ${colors.primary}${inputtedVerb}${colors.neutral} today!`);
-	} else {
-		activeVerbs = verbs[selection].list;
-		console.log(`\nGreat, you've chosen to practice ${colors.primary}${verbs[selection].description}${colors.neutral} today!`);
-	}
+  if (selection === 'spec') {
+    const inputtedVerb = await inputVerb();
+    activeVerbs = [ inputtedVerb ];
+    console.log(`\nGreat, you've chosen to practice the verb ${colors.primary}${inputtedVerb}${colors.neutral} today!`);
+  } else {
+    activeVerbs = verbs[selection].list;
+    console.log(`\nGreat, you've chosen to practice ${colors.primary}${verbs[selection].description}${colors.neutral} today!`);
+  }
 
   console.log(`\nTip: You can use ${colors.primary}a'${colors.neutral} / ${colors.primary}e'${colors.neutral} / ${colors.primary}i'${colors.neutral} as shortcuts for ${colors.primary}á${colors.neutral} / ${colors.primary}é${colors.neutral} / ${colors.primary}í${colors.neutral}.`);
   console.log(`\nIf you want to return to the main menu, you can type ${colors.primary}menu${colors.neutral}.`);
