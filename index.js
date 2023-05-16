@@ -133,7 +133,7 @@ const conjugations = {
   vivir: [ 'vivo', 'vives', 'vive', 'vivimos', 'vivís', 'viven' ],
 	// Irregular -IR verbs (e > ie)
 	mentir: [ 'miento', 'mientes', 'miente', 'mentimos', 'mentís', 'mienten' ],
-	preferir: [ 'prefiero', 'prefieres', 'prefiere', 'preferimos', 'prefereís', 'prefieren' ],
+	preferir: [ 'prefiero', 'prefieres', 'prefiere', 'preferimos', 'preferís', 'prefieren' ],
 	venir: [ 'vengo', 'vienes', 'viene', 'venimos', 'venís', 'vienen' ],
 	// Irregular -IR verbs (e > i)
 	pedir: [ 'pido', 'pides', 'pide', 'pedimos', 'pedís', 'piden' ],
@@ -155,6 +155,9 @@ const colors = {
   neutral: '\x1b[0m'
 }
 const setUpData = () => {
+	verbs.allReg.list = [ ...verbs.regAR.list, ...verbs.regER.list, ...verbs.regIR.list ];
+	verbs.allIrreg.list = [ ...verbs.irregAR.list, ...verbs.irregER.list, ...verbs.irregIR.list ];
+	verbs.all.list = [ ...verbs.allReg.list, ...verbs.allIrreg.list ];
   verbs.allAR.list = [ ...verbs.regAR.list, ...verbs.irregAR.list ];
   verbs.allER.list = [ ...verbs.regER.list, ...verbs.irregER.list ];
 	verbs.allIR.list = [ ...verbs.regIR.list, ...verbs.irregIR.list ];
@@ -198,8 +201,8 @@ const playRound = async (activeVerbs, score = 0, attempts = 0, mistakes = []) =>
   if (formattedAnswer == 'menu' || formattedAnswer == 'exit') {
     console.log(`\nYour score was ${colors.primary}${score}/${attempts}${colors.neutral}.`);
 
-		if (activeVerbs.length > 1) {
-			console.log(`\nYou should practice the following verbs: ${colors.primary}${mistakes.join(', ')}${colors.neutral}.`);
+		if (activeVerbs.length > 1 && mistakes.length) {
+			console.log(`\nYou should study the following verbs: ${colors.primary}${mistakes.join(', ')}${colors.neutral}.`);
 		}
     console.log('Well done for practicing!', '\n');
     return formattedAnswer == 'menu' ? initiateGame() : process.exit();

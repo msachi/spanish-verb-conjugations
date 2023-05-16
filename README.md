@@ -9,5 +9,4 @@ Node 18 or higher
 
 ### To install & run
 `npm i`  
-`node index.js`
-
+`npm start`
