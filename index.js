@@ -81,7 +81,7 @@ const conjugations = {
   pasar: [ 'paso', 'pasas', 'pasa', 'pasamos', 'pasáis', 'pasan' ],
   practicar: [ 'practico', 'practicas', 'practica', 'practicamos', 'practicáis', 'practican' ],
   regresar: [ 'regreso', 'regresas', 'regresa', 'regresamos', 'regresáis', 'regresan' ],
-  tocar: [ 'toco', 'tocas', 'toco', 'tocamos', 'tocáis', 'tocan' ],
+  tocar: [ 'toco', 'tocas', 'toca', 'tocamos', 'tocáis', 'tocan' ],
   tomar: [ 'tomo', 'tomas', 'toma', 'tomamos', 'tomáis', 'toman' ],
   trabajar: [ 'trabajo', 'trabajas', 'trabaja', 'trabajamos', 'trabajáis', 'trabajan' ],
   viajar: [ 'viajo', 'viajas', 'viaja', 'viajamos', 'viajáis', 'viajan' ],
